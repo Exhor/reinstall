@@ -1,0 +1,53 @@
+# patch
+# install anaconda
+bash ~/Downloads/Anaconda3-4.3.1-Linux-x86_64.sh
+# mkl
+conda install mkl-service
+sudo apt-get install python3-dev
+# cuda
+sudo apt-get install linux-headers-$(uname -r)
+sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+
+echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
+echo 'export CUDA_ROOT=/usr/local/cuda' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=${CUDA_HOME}/lib64' >> ~/.bashrc
+
+# cudnn: https://developer.nvidia.com/rdp/cudnn-download
+# echo 'export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH' >> ~/.bashrc
+cd ~/Downloads/cuda
+sudo cp -P include/cudnn.h /usr/include
+sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
+sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
+# pygpu
+conda install theano pygpu
+conda install pydot-ng
+# keras
+pip install keras
+# edit to set theano backend
+gedit ~/.keras/keras.json
+
+# p5 stuff
+mkdir p5
+cd p5
+# git
+sudo apt install git
+git init
+git config --global user.name "Exhor"
+git config --global user.email t.corradi@gmail.com
+git config --global color.ui true
+git config --global color.status auto
+git config --global color.branch auto
+git config --global core.editor gedit
+git clone https://github.com/Exhor/deep_visuotactile_classification
+
+# mendeley
+sudo apt-get update
+sudo apt-get install mendeleydesktop
+
+# prompt
+echo "PS1='S '" >> ~/.bashrc
+echo 'alias e="cd ~/p5/deep_visuotactile_classification"' >> ~/.bashrc
+echo 'alias j="jupyter notebook"' >> ~/.bashrc
+
