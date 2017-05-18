@@ -26,6 +26,7 @@ conda install pydot-ng
 pip install keras
 # edit to set theano backend
 gedit ~/.keras/keras.json
+gedit ~/.theanorc
 
 # p5 stuff
 mkdir p5
@@ -49,7 +50,7 @@ sudo apt-get update
 sudo apt-get install mendeleydesktop
 
 # prompt
-echo "PS1='S '" >> ~/.bashrc
-echo 'alias e="cd ~/p5/deep_visuotactile_classification"' >> ~/.bashrc
+echo 'PS1="\[\033[32m\]\w\n\[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] $ \[\033[0m\]"' >> ~/.bashrc
+echo 'alias e="cd ~/a2/"' >> ~/.bashrc
 echo 'alias j="jupyter notebook"' >> ~/.bashrc
 
