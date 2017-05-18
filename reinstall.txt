@@ -15,7 +15,6 @@ echo 'export CUDA_ROOT=/usr/local/cuda' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=${CUDA_HOME}/lib64' >> ~/.bashrc
 
 # cudnn: https://developer.nvidia.com/rdp/cudnn-download
-# echo 'export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH' >> ~/.bashrc
 cd ~/Downloads/cuda
 sudo cp -P include/cudnn.h /usr/include
 sudo cp -P lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
@@ -40,7 +39,10 @@ git config --global color.ui true
 git config --global color.status auto
 git config --global color.branch auto
 git config --global core.editor gedit
-git clone https://github.com/Exhor/deep_visuotactile_classification
+ssh-keygen -p
+cat /home/tadeo/.ssh/id_rsa.pub
+# add public key to github, and then
+git remote add origin git@github.com:Exhor/deep_visuotactile_classification.git
 
 # mendeley
 sudo apt-get update
