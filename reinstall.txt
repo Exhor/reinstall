@@ -1,9 +1,9 @@
 # patch
-# install anaconda
-bash ~/Downloads/Anaconda3-4.3.1-Linux-x86_64.sh
-# mkl
+# install anaconda from: https://conda.io/miniconda.html
+conda install numpy scipy mkl nose sphinx pydot-ng
+# mkl-service
 conda install mkl-service
-sudo apt-get install python3-dev
+sudo apt-get install python-dev
 # cuda
 sudo apt-get install linux-headers-$(uname -r)
 sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
