@@ -1,6 +1,6 @@
 # patch
 # install anaconda from: https://conda.io/miniconda.html
-conda install numpy scipy mkl nose sphinx pydot-ng
+conda install numpy scipy mkl nose sphinx pydot-ng spyder
 # mkl-service
 conda install mkl-service
 sudo apt-get install python-dev
