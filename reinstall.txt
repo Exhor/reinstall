@@ -1,6 +1,6 @@
 # patch
 # install anaconda from: https://conda.io/miniconda.html
-conda install numpy scipy mkl nose sphinx pydot-ng spyder jupyter
+conda install numpy scipy mkl nose sphinx pydot-ng spyder jupyter matplotlib
 # mkl-service
 conda install mkl-service
 sudo apt-get install python-dev
@@ -39,7 +39,7 @@ git config --global user.email t.corradi@gmail.com
 git config --global color.ui true
 git config --global color.status auto
 git config --global color.branch auto
-git config --global core.editor gedit
+git config --global core.editor geditTrainTestParams
 ssh-keygen -p
 cat /home/tadeo/.ssh/id_rsa.pub
 # add public key to github, and then
